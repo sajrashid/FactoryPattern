@@ -9,27 +9,38 @@ namespace Factory
 {
     class Program
     {
+        enum AuthType
+        {
+            JWT,
+            Windows
+
+        }
         static void Main()
         {
-            var SomeUser = new { UserId = "Mule", ClaimType = "JWT", Roles = new List<string> { "Mule" } };
-            // var SomeUser = new { UserId = "12049436", ClaimType = "ADLDS", Roles = new List<string> { "WindowsAuth" } };
+            AuthType claimType = AuthType.JWT;
+            var User = new { UserId = "Mule",  Roles = new List<string> { "Mule" } };
+
+            // ClaimType claimType = ClaimType.Windows;
+            // var SomeUser = new { UserId = "12049436", Roles = new List<string> { "WindowsAuth" } };
 
 
-            IClaimsFactory factory;
-            switch (SomeUser.ClaimType)
+            // Switch on the claimType enum.
+            IClaimsFactory factory = null;
+            switch (claimType)
             {
-                case "JWT":
+                case AuthType.JWT:
                     factory = new JWTFactory();
                     break;
-                case "ADLDS":
+                case AuthType.Windows:
                     factory = new ADLDSFactory();
                     break;
                 default:
                     throw new System.NotImplementedException();
-            }
 
+            }
+            
             var claimsFactory = factory.CreateClaims();
-            var claims= claimsFactory.Create(SomeUser.UserId, SomeUser.Roles);
+            var claims = claimsFactory.Create(User.UserId, User.Roles);
         }
     }
 }
