@@ -17,16 +17,16 @@ namespace Factory
         }
         static void Main()
         {
-            AuthType claimType = AuthType.JWT;
+            AuthType authType = AuthType.JWT;
             var User = new { UserId = "Mule",  Roles = new List<string> { "Mule" } };
 
-            // ClaimType claimType = ClaimType.Windows;
+            // AuthType claimType = AuthType.Windows;
             // var SomeUser = new { UserId = "12049436", Roles = new List<string> { "WindowsAuth" } };
 
 
             // Switch on the claimType enum.
             IClaimsFactory factory = null;
-            switch (claimType)
+            switch (authType)
             {
                 case AuthType.JWT:
                     factory = new JWTFactory();
