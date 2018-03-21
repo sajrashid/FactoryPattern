@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
 
-namespace Factory.Factories.Claims
+namespace Factory.Factories.ClaimsFactory
 {
-     class JWTFactory : IClaimsFactory
+    class JWTFactory : IClaimsFactory
         {
             public IClaims CreateClaims()
             {

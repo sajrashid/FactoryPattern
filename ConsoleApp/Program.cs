@@ -1,9 +1,5 @@
-﻿using Factory.Factories.Claims;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using Factory.Factories.ClaimsFactory;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 
 namespace Factory
 {
