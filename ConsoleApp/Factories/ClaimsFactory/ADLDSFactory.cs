@@ -20,7 +20,7 @@ namespace Factory.Factories.ClaimsFactory
     class ADLDSClaims : IClaims
     {
 
-        List<Claim> IClaims.Create(string UserId, List<string> Roles)
+        List<Claim> IClaims.AddClaims(string UserId, List<string> Roles)
         {
             throw new NotImplementedException();
         }

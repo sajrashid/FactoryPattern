@@ -22,7 +22,7 @@ namespace Factory.Factories.ClaimsFactory
      {
         private IHttpContextAccessor _httpContext;
 
-        List<Claim> IClaims.Create(string UserId, List<string> Roles)
+        List<Claim> IClaims.AddClaims(string UserId, List<string> Roles)
         {
 
             // create a list of claims and add userId 

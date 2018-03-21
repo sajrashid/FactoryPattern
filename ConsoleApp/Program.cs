@@ -36,7 +36,7 @@ namespace Factory
             }
             
             var claimsFactory = factory.CreateClaims();
-            var claims = claimsFactory.Create(User.UserId, User.Roles);
+            var claims = claimsFactory.AddClaims(User.UserId, User.Roles);
         }
     }
 }

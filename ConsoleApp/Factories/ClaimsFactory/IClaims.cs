@@ -6,7 +6,7 @@ namespace Factory.Factories.ClaimsFactory
 {
     interface IClaims
     {
-        List<Claim> Create(String UserId, List<string> Roles);
+        List<Claim> AddClaims(String UserId, List<string> Roles);
         IEnumerable<Claim> Get(String UserId);
 
     }
